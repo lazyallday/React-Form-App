@@ -37,15 +37,17 @@ export class UsersList extends Component {
         this.props.sortUser(key);
 
         e.preventDefault();
+
+        /*
         var icon = '';
         switch (key) {
-            default:
-                return 0;
-            case 'name':
-                icon = e.target;
-                console.log(icon.value);
-                icon.value = "&#8595;";
-        }
+        default:
+        return 0;
+        case 'name':
+            icon = e.target;
+            console.log(icon.value);
+            icon.value = "&#8595;";
+        } */
     }
 
     onClickDel(user) {

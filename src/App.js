@@ -8,17 +8,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = { users: SourceList.Users };
-
-    this.addUser = this.addUser.bind(this);
-    this.removeUser = this.removeUser.bind(this);
-    this.updateUserInfo = this.updateUserInfo.bind(this);
-    this.updateUser = this.updateUser.bind(this);
-
-    this.compareBy = this.compareBy.bind(this);
-    this.sortBy = this.sortBy.bind(this);
   }
 
-  addUser(user) {
+  addUser = (user) => {
     user.id = SourceList.Users.length + 1;
     this.setState((prevState) => {
       prevState.users.unshift(user)
@@ -28,7 +20,7 @@ class App extends Component {
     })
   }
 
-  removeUser(user) {
+  removeUser = (user) => {
     this.setState((prevState) => {
       return {
         users: prevState.users.filter(x => x.id !== user.id)
@@ -36,7 +28,7 @@ class App extends Component {
     })
   }
 
-  updateUserInfo(oldUser, newUser) {
+  updateUserInfo = (oldUser, newUser) => {
     oldUser.name = newUser.name;
     oldUser.phone = newUser.phone;
     oldUser.email = newUser.email;
@@ -44,7 +36,7 @@ class App extends Component {
     return oldUser;
   }
 
-  updateUser(user) {
+  updateUser = (user) => {
     this.setState((prevState) => {
       return {
         users: prevState.users.map(x => (x.id === user.id) ? this.updateUserInfo(x, user) : x)
@@ -65,7 +57,7 @@ class App extends Component {
 
   **/
 
-  compareBy(key) {
+  compareBy = (key) => {
     return function (a, b) {
       if (a[key] < b[key]) return -1;
       if (a[key] > b[key]) return 1;
@@ -73,7 +65,7 @@ class App extends Component {
     };
   }
 
-  sortBy(key) {
+  sortBy = (key) => {
     let arrayCopy = [...this.state.users];
     arrayCopy.sort(this.compareBy(key));
     this.setState({ users: arrayCopy });

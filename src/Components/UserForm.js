@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 
 export class UserForm extends Component {
     constructor(props) {
         super(props);
 
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
         this.state = { value: '' };
     }
 
-    handleSubmit(e) {
+    handleSubmit = (e) => {
         e.preventDefault();
         var newUser =
             {
@@ -28,7 +25,7 @@ export class UserForm extends Component {
         this.setState({ value: '' });
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         e.preventDefault();
         if (
             this._input_name.value === '' || this._input_email.value === '' || this._input_phone.value === ''

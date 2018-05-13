@@ -22,22 +22,14 @@ var delStyle = {
 export class UsersList extends Component {
     constructor(props) {
         super(props);
-        this.onClickSort = this.onClickSort.bind(this);
-
-        this.onClickDel = this.onClickDel.bind(this);
-        this.onClickEdit = this.onClickEdit.bind(this);
-        this.createUserNode = this.createUserNode.bind(this);
-        this.cancelEdit = this.cancelEdit.bind(this);
-        this.updateUser = this.updateUser.bind(this);
 
         this.state = { userId: [] }
     }
 
-    onClickSort(e, key) {
+    onClickSort = (e, key) => {
         this.props.sortUser(key);
 
         e.preventDefault();
-
         /*
         var icon = '';
         switch (key) {
@@ -50,11 +42,11 @@ export class UsersList extends Component {
         } */
     }
 
-    onClickDel(user) {
+    onClickDel = (user) => {
         this.props.remove(user);
     }
 
-    onClickEdit(_user) {
+    onClickEdit = (_user) => {
         this.setState((prevState) => {
             return {
                 userId: prevState.userId.concat(_user.id)
@@ -62,7 +54,7 @@ export class UsersList extends Component {
         });
     }
 
-    updateUser(_user) {
+    updateUser = (_user) => {
         this.setState((prevState) => {
             return {
                 userId: prevState.userId.filter(x => x !== _user.id)
@@ -71,7 +63,7 @@ export class UsersList extends Component {
         this.props.updateUser(_user);
     }
 
-    cancelEdit(_user) {
+    cancelEdit = (_user) => {
         this.setState((prevState) => {
             return {
                 userId: prevState.userId.filter(x => x !== _user.id)
@@ -79,7 +71,7 @@ export class UsersList extends Component {
         });
     }
 
-    createUserNode(_user) {
+    createUserNode = (_user) => {
         if (this.state.userId.includes(_user.id)) {
             return (
                 <div key={_user.id}>

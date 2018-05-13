@@ -6,17 +6,14 @@ class EditForm extends Component {
     constructor(props) {
         super(props);
 
-        this.handleCancel = this.handleCancel.bind(this);
-        this.handleUpdate = this.handleUpdate.bind(this);
-        this.handleChange = this.handleChange.bind(this);
         this.state = { value: this.props.user };
     }
 
-    handleCancel(e) {
+    handleCancel = (e) => {
         this.props.cancel(this.props.user);
     }
 
-    handleUpdate(e) {
+    handleUpdate = (e) => {
         e.preventDefault();
         this.props.user.fullName = this._input_name.value;
         this.props.user.email = this._input_email.value;
@@ -24,7 +21,7 @@ class EditForm extends Component {
         this.props.update(this.props.user);
     }
 
-    handleChange(e) {
+    handleChange = (e) => {
         e.preventDefault();
         if (
             this._input_name.value === '' || this._input_email.value === '' || this._input_phone.value === ''

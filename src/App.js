@@ -11,11 +11,11 @@ class App extends Component {
   }
 
   addUser = (user) => {
-    user.id = SourceList.Users.length + 1;
+    user.id = this.state.users.length + 1;
     this.setState((prevState) => {
       prevState.users.unshift(user)
       return {
-        users: prevState.users
+        users: [...prevState.users, user]
       }
     })
   }

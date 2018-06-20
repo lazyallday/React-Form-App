@@ -1,5 +1,5 @@
 {
-  "homepage": "https://lazyallday.github.io/React-Form-App/",
+  "homepage": "https://react-form-app.herokuapp.com/",
   "name": "first-react-form",
   "version": "0.1.0",
   "private": true,
@@ -15,8 +15,19 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },  
+  },
   "devDependencies": {
     "gh-pages": "^1.1.0"
+  },
+  "description": "A form collecting user's information and then print them to a list.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lazyallday/React-Form-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lazyallday/React-Form-App/issues"
   }
 }

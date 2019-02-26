@@ -11,7 +11,7 @@ Make sure you have a recent version of [Node.js](https://nodejs.org/en/) install
 In the downloaded respository:
 
 ```
-npm install --save react react-dom
+npm install
 ```
 
 ## Running the App
